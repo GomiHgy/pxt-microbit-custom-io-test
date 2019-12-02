@@ -7,12 +7,8 @@ namespace yinbitEx {
         BaudRate.BaudRate115200
     )
 
-    //% blockId=show_strings block="コメント %v"
-    export function noaction(text: string): void {
-    }
-
-    //% blockId=cmd_send block="送る"
-    export function send(): void {
-        serial.writeString("02,FF,FF,00,00,00,03")
+    //% blockId=cmd_send block="リセット"
+    export function reset(): void {
+        serial.writeString("02FFFF00000003\n")
     }
 }
