@@ -7,7 +7,7 @@ namespace yinbitEx {
         BaudRate.BaudRate115200
     )
 
-    //% blockId=cmd_send block="リセット"
+    //% blockId="cmd_reset" block="リセット"
     export function reset(): void {
         serial.writeString("02FFFF00000003\n")
     }
@@ -18,7 +18,7 @@ namespace yinbitEx {
          * @param pixeloffset position of the NeoPixel in the strip
          * @param rgb RGB color of the LED
          */
-    //% blockId="neopixel_set_pixel_color" block="%pixeloffset|番目のLEDを %rgb=neopixel_colors 色にする" 
+    //% blockId="cmd_set_color" block="%pixeloffset 番目のLEDを %rgb 色にする" 
     export function setPixelColor(pixeloffset: number, rgb: number): void {
         let rgb_str = rgb.toString()
         serial.writeString("02" + toHexString4(pixeloffset) + toHexString6(rgb) + "03\n")
