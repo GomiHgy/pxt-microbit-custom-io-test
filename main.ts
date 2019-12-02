@@ -1,4 +1,4 @@
-//% color=190 weight=100 icon="\uf1ec" block="Basic Blocks"
+//% color=250 weight=100 icon="\uf0ed" block="yin:bit Ex"
 namespace yinbitEx {
     serial.redirect(
         SerialPin.P8,
