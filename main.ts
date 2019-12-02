@@ -1,4 +1,5 @@
-//% color=250 weight=100 icon="\uf0ed" block="yin:bit Ex"
+//https://makecode.com/defining-blocks
+//% color=250 weight=120 icon="\uf0eb" block="yin:bit Ex"
 namespace yinbitEx {
     serial.redirect(
         SerialPin.P8,
@@ -12,6 +13,6 @@ namespace yinbitEx {
 
     //% blockId=cmd_send block="送る"
     export function send(): void {
-        serial.writeString("FF,")
+        serial.writeString("02,FF,FF,00,00,00,03")
     }
 }
