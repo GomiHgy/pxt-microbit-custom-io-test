@@ -9,7 +9,7 @@ namespace yinbitEx {
     export function noaction(text: string): void {
     }
 
-    //% blockId=show_strings block="送る"
+    //% blockId=cmd_send block="送る"
     export function send(): void {
         serial.writeString("FF,")
     }
