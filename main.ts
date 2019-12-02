@@ -18,10 +18,7 @@ namespace yinbitEx {
          * @param pixeloffset position of the NeoPixel in the strip
          * @param rgb RGB color of the LED
          */
-    //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
-    //% blockGap=8
-    //% weight=80
-    //% parts="neopixel" advanced=true
+    //% blockId="neopixel_set_pixel_color" block="%pixeloffset|番目のLEDを %rgb=neopixel_colors 色にする" 
     export function setPixelColor(pixeloffset: number, rgb: number): void {
         let rgb_str = rgb.toString()
         serial.writeString("02" + toHexString4(pixeloffset) + toHexString6(rgb) + "03\n")
