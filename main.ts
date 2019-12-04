@@ -12,7 +12,7 @@ namespace yinbitEx {
         serial.writeString("02FFFF00000003\n")
     }
 
-    //% blockId="cmd_set_color" block="%offset 番目のLEDを %rgb 色にする"
+    //% blockId="cmd_set_color" block="%offset 番目のLEDを %rgb=neopixel_colors 色にする"
     export function setPixelColor(offset: number, rgb: number): void {
         let rgb_str = rgb.toString()
         serial.writeString("02" + toHexString4(offset) + toHexString6(rgb) + "03\n")
