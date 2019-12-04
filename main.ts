@@ -30,7 +30,8 @@ namespace yinbitEx {
      * @param s saturation from 0 to 99
      * @param l luminosity from 0 to 99
      */
-    //% blockId=cmd_set_color_hsv_all 色相="全てのLEDを 色相 %h 度 彩度 %g ％ 明度 %b ％で点灯する"
+    //% blockId=cmd_set_color_hsv_all block="全てのLEDを 色相 %h 度 彩度 %g ％ 明度 %b ％で点灯する"
+    //% inlineInputMode=inline
     export function setPixelColorHSV(h: number, s: number, l: number): void {
         h = Math.round(h);
         s = Math.round(s);
