@@ -12,10 +12,16 @@ namespace yinbitEx {
         serial.writeString("02FFFF00000003\n")
     }
 
-    //% blockId="cmd_set_color" block="%offset 番目のLEDを 赤 %r 緑 %g 青 %b で点灯する"
+    //% blockId="cmd_set_color" block="%offset 番目のLEDを 赤 %r 緑 %g 青 %b 色で点灯する"
     //% inlineInputMode=inline
     export function setPixelColor(offset: number, r: number, g: number, b: number): void {
         serial.writeString("02" + toHexString4(offset) + toHexString2(r) + toHexString2(g) + toHexString2(b) + "03\n")
+    }
+
+    //% blockId="cmd_set_color_all" block="全てのLEDを 赤 %r 緑 %g 青 %b 色で点灯する"
+    //% inlineInputMode=inline
+    export function setPixelColorAll(offset: number, r: number, g: number, b: number): void {
+        serial.writeString("02FFFF" + toHexString2(r) + toHexString2(g) + toHexString2(b) + "03\n")
     }
 
     function toHexString6(value: number): string {
@@ -45,6 +51,6 @@ namespace yinbitEx {
         let _16進数リスト = "0123456789ABCDEF"
         list[0] = Math.idiv(value, 0x10)
         list[1] = value - list[0] * 0x10
-        return "" + _16進数リスト.charAt(list[0]) + _16進数リスト.charAt(list[1]) + _16進数リスト.charAt(list[2]) + _16進数リスト.charAt(list[3])
+        return "" + _16進数リスト.charAt(list[0]) + _16進数リスト.charAt(list[1])
     }
 }
