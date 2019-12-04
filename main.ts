@@ -4,7 +4,7 @@ namespace yinbitEx {
     serial.redirect(
         SerialPin.P8,
         SerialPin.P2,
-        BaudRate.BaudRate115200
+        BaudRate.BaudRate38400
     )
 
     //% blockId="cmd_clear" block="LEDを消す"
