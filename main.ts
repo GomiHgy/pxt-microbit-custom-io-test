@@ -20,7 +20,7 @@ namespace yinbitEx {
 
     //% blockId="cmd_set_color_all" block="全てのLEDを 赤 %r 緑 %g 青 %b 色で点灯する"
     //% inlineInputMode=inline
-    export function setPixelColorAll(offset: number, r: number, g: number, b: number): void {
+    export function setPixelColorAll(r: number, g: number, b: number): void {
         serial.writeString("02FFFF" + toHexString2(r) + toHexString2(g) + toHexString2(b) + "03\n")
     }
 
