@@ -12,16 +12,10 @@ namespace yinbitEx {
         serial.writeString("02FFFF00000003\n")
     }
 
-    /**
-         * Set LED to a given color (range 0-255 for r, g, b). 
-         * You need to call ``show`` to make the changes visible.
-         * @param pixeloffset position of the NeoPixel in the strip
-         * @param rgb RGB color of the LED
-         */
-    //% blockId="cmd_set_color" block="%pixeloffset 番目のLEDを %rgb 色にする"
-    export function setPixelColor(pixeloffset: number, rgb: number): void {
+    //% blockId="cmd_set_color" block="%offset 番目のLEDを %rgb 色にする"
+    export function setPixelColor(offset: number, rgb: number): void {
         let rgb_str = rgb.toString()
-        serial.writeString("02" + toHexString4(pixeloffset) + toHexString6(rgb) + "03\n")
+        serial.writeString("02" + toHexString4(offset) + toHexString6(rgb) + "03\n")
     }
 
     function toHexString6(value: number): string {
