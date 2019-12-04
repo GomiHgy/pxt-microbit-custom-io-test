@@ -12,7 +12,8 @@ namespace yinbitEx {
         serial.writeString("02FFFF00000003\n")
     }
 
-    //% blockId="cmd_set_color" weight=300　block="%offset 番目のLEDを 赤 %r 緑 %g 青 %b で点灯する"
+    //% blockId="cmd_set_color" block="%offset 番目のLEDを 赤 %r 緑 %g 青 %b で点灯する"
+    //% inlineInputMode=inline
     export function setPixelColor(offset: number, r: number, g: number, b: number): void {
         serial.writeString("02" + toHexString4(offset) + toHexString2(r) + toHexString2(g) + toHexString2(b) + "03\n")
     }
